@@ -68,6 +68,9 @@
     <ClInclude Include="Vector2D.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
+    <ClInclude Include="KeyboardController.h">
+      <Filter>헤더 파일\ECS</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Image Include="assets\player.png">
