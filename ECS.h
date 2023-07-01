@@ -20,6 +20,7 @@ inline ComponentID getComponentTypeID()
 
 template <typename T> inline ComponentID getComponentTypeID() noexcept
 {
+    static_assert (std::is_base_of<Component, T>::value, "");
     static ComponentID typeID = getComponentTypeID();
     return typeID;
 }
@@ -37,7 +38,6 @@ public:
     virtual void init() {}
     virtual void update() {}
     virtual void draw() {}
-
     virtual ~Component() {}
 };
 
@@ -54,9 +54,12 @@ public:
     void update()
     {
         for (auto& c : components) c->update();
+    }
+    void draw()
+    {
         for (auto& c : components) c->draw();
     }
-    void draw() {}
+
     bool isActive() const { return active; }
     void destroy() { active = false; }
 
@@ -70,7 +73,7 @@ public:
     {
         T* c(new T(std::forward<TArgs>(mArgs)...));
         c->entity = this;
-        std::unique_ptr<Component> uPtr{ c };
+        std::unique_ptr<Component> uPtr { c };
         components.emplace_back(std::move(uPtr));
 
         componentArray[getComponentTypeID<T>()] = c;
