@@ -1,7 +1,8 @@
 /*
 * SDL2 tutorial
-* Making A Game #1: Making The Game Loop : C++ And SDL2 Tutorial
-* https://www.youtube.com/watch?v=44tO977slsU
+* How To Make A Game #2 : Drawing Textures/Sprites To The Screen : C++ And SDL2 Image Tutorial
+* https://www.youtube.com/watch?v=YrWQsuDT3NE
+* 
 * 2023.06.10
 */
 
