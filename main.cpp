@@ -1,7 +1,7 @@
 /*
 * SDL2 tutorial
-* How To Make a Game #3 : Limiting Frame Rate : C++ And SDL2 Tutorial
-* https://www.youtube.com/watch?v=jzasDqPmtPI
+* How To Make Games #4 : Creating A Simple Texture Loader : C++ And SDL2 Tutorial
+* https://www.youtube.com/watch?v=RqvpkZ7I1aU
 * 
 * 2023.06.10
 */
@@ -19,7 +19,7 @@ int main(int argc, char* argv[])
     int frameTime;
 
     game = new Game();
-    game->init("GameWindow", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 800, 600, false);
+    game->init("GameWindow", 800, 600, false);
     
     while (game->running())
     {
