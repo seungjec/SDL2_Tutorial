@@ -1,7 +1,7 @@
 /*
 * SDL2 tutorial
-* How To Make A Game #6 : Implement Tilemap's : C++ And SDL2 Tutorial
-* https://www.youtube.com/watch?v=1eaxE_waDNc
+* How To Make A Game #7 : Entity Component System in C++ & SDL2 Tutorial
+* https://www.youtube.com/watch?v=XsvI8Sng6dk
 * 
 * 2023.06.11
 */
