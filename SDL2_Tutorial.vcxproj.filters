@@ -16,6 +16,9 @@
     <Filter Include="리소스 파일\assets">
       <UniqueIdentifier>{53faf98e-d464-438b-9e72-5947d0498cc8}</UniqueIdentifier>
     </Filter>
+    <Filter Include="헤더 파일\ECS">
+      <UniqueIdentifier>{e50a2fe4-0bdf-4187-a1db-70d1a627e695}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -48,10 +51,16 @@
       <Filter>헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="Components.h">
-      <Filter>헤더 파일</Filter>
+      <Filter>헤더 파일\ECS</Filter>
     </ClInclude>
     <ClInclude Include="ECS.h">
-      <Filter>헤더 파일</Filter>
+      <Filter>헤더 파일\ECS</Filter>
+    </ClInclude>
+    <ClInclude Include="PositionComponent.h">
+      <Filter>헤더 파일\ECS</Filter>
+    </ClInclude>
+    <ClInclude Include="SpriteComponent.h">
+      <Filter>헤더 파일\ECS</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
