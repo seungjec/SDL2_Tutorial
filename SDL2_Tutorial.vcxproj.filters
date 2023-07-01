@@ -36,6 +36,9 @@
     <ClCompile Include="Map.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="Vector2D.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h">
@@ -56,11 +59,14 @@
     <ClInclude Include="ECS.h">
       <Filter>헤더 파일\ECS</Filter>
     </ClInclude>
-    <ClInclude Include="PositionComponent.h">
-      <Filter>헤더 파일\ECS</Filter>
-    </ClInclude>
     <ClInclude Include="SpriteComponent.h">
       <Filter>헤더 파일\ECS</Filter>
+    </ClInclude>
+    <ClInclude Include="TransformComponent.h">
+      <Filter>헤더 파일\ECS</Filter>
+    </ClInclude>
+    <ClInclude Include="Vector2D.h">
+      <Filter>헤더 파일</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
