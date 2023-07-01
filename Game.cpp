@@ -1,12 +1,13 @@
 #include "Game.h"
 #include "TextureManager.h"
 #include "GameObject.h"
-
-//SDL_Texture* playerTex;
-//SDL_Rect srcR, destR;
+#include "Map.h"
 
 GameObject* player;
 GameObject* enemy;
+Map* map;
+
+SDL_Renderer* Game::renderer = nullptr;
 
 Game::Game()
 {}
@@ -37,9 +38,9 @@ void Game::init(const char* title, int width, int height, bool fullscreen)
         isRunning = false;
     }
 
-    //playerTex = TextureManager::LoadTexture("assets/player.png", renderer);
-    player = new GameObject("assets/player.png", renderer, 0, 0);
-    enemy = new GameObject("assets/enemy.png", renderer, 50, 50);
+    player = new GameObject("assets/player.png", 0, 0);
+    enemy = new GameObject("assets/enemy.png", 50, 50);
+    map = new Map();
 }
 
 void Game::handleEvents()
@@ -60,21 +61,16 @@ void Game::update()
 {
     player->Update();
     enemy->Update();
-    //cnt++;
-    //destR.h = 64;
-    //destR.w = 64;
-    //destR.x = cnt;
-
-    //std::cout << cnt << std::endl;
 }
 
 void Game::render()
 {
     SDL_RenderClear(renderer);
-    // this is where we would add stuff to render
-    //SDL_RenderCopy(renderer, playerTex, NULL, &destR);
+
+    map->DrawMap();
     player->Render();
     enemy->Render();
+
     SDL_RenderPresent(renderer);
 }
 
@@ -83,5 +79,4 @@ void Game::clean()
     SDL_DestroyWindow(window);
     SDL_DestroyRenderer(renderer);
     SDL_Quit();
-    std::cout << "Game Cleaned" << std::endl;
 }
