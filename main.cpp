@@ -1,7 +1,7 @@
 /*
 * SDL2 tutorial
-* How To Make A Game #2 : Drawing Textures/Sprites To The Screen : C++ And SDL2 Image Tutorial
-* https://www.youtube.com/watch?v=YrWQsuDT3NE
+* How To Make a Game #3 : Limiting Frame Rate : C++ And SDL2 Tutorial
+* https://www.youtube.com/watch?v=jzasDqPmtPI
 * 
 * 2023.06.10
 */
@@ -12,14 +12,28 @@ Game* game = nullptr;
 
 int main(int argc, char* argv[])
 {
+    const int FPS = 60;
+    const int frameDelay = 1000 / FPS;
+
+    Uint32 frameStart;
+    int frameTime;
+
     game = new Game();
-    game->init("SDL", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 800, 600, false);
+    game->init("GameWindow", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 800, 600, false);
     
     while (game->running())
     {
+        frameStart = SDL_GetTicks();
+
         game->handleEvents();
         game->update();
         game->render();
+
+        frameTime = SDL_GetTicks() - frameStart;
+        if (frameDelay > frameTime)
+        {
+            SDL_Delay(frameDelay - frameTime);
+        }
     }
 
     game->clean();
