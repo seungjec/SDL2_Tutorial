@@ -2,11 +2,8 @@
 #include "TextureManager.h"
 #include "Map.h"
 #include "Components.h"
-//#include "GameObject.h"
-//#include "ECS.h"
+#include "Vector2D.h"
 
-//GameObject* player;
-//GameObject* enemy;
 Map* map;
 Manager manager;
 
@@ -14,7 +11,10 @@ SDL_Renderer* Game::renderer = nullptr;
 auto& player(manager.addEntity());
 
 Game::Game()
-{}
+{
+    isRunning = false;
+    window = nullptr;
+}
 Game::~Game()
 {}
 
@@ -43,14 +43,10 @@ void Game::init(const char* title, int width, int height, bool fullscreen)
     }
 
     map = new Map();
-    //player = new GameObject("assets/player.png", 0, 0);
-    //enemy = new GameObject("assets/enemy.png", 50, 50);
 
     // ECS implementation
-    player.addComponent<PositionComponent>(100,200);
+    player.addComponent<TransformComponent>();
     player.addComponent<SpriteComponent>("assets/player.png");
-    //newPlayer.addComponent<PositionComponent>();
-    //newPlayer.getComponent<PositionComponent>().setPos(500,500);
 }
 
 void Game::handleEvents()
@@ -69,14 +65,12 @@ void Game::handleEvents()
 
 void Game::update()
 {
-    //player->Update();
-    //enemy->Update();
     manager.refresh();
     manager.update();
-    //std::cout << newPlayer.getComponent<PositionComponent>().x() << ", " <<
-    //    newPlayer.getComponent<PositionComponent>().y() << std::endl;
+    
+    player.getComponent<TransformComponent>().position.Add(Vector2D(5,0));
 
-    if (player.getComponent<PositionComponent>().x() > 200)
+    if (player.getComponent<TransformComponent>().position.x > 200)
     {
         player.getComponent<SpriteComponent>().setTex("assets/enemy.png");
     }
