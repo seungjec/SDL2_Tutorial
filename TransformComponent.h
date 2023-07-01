@@ -11,6 +11,9 @@ private:
 
 public:
     Vector2D position;
+    Vector2D velocity;
+
+    int speed = 3;
 
     TransformComponent()
     {
@@ -24,21 +27,21 @@ public:
         position.y = y;
     }
 
-    //int x() { return xpos; }
-    //int y() { return ypos; }
-
-    void update() override
-    {
-        //position.x++;
-        //position.y++;
-    }
-
     void setPos(float x, float y)
     {
         position.x = x;
         position.y = y;
     }
 
-    //void x(int x) { xpos = x; }
-    //void y(int y) { ypos = y; }
+    void init() override
+    {
+        velocity.x = 0;
+        velocity.y = 0;
+    }
+
+    void update() override
+    {
+        position.x += velocity.x * speed;
+        position.y += velocity.y * speed;
+    }
 };
