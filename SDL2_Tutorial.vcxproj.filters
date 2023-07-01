@@ -47,9 +47,27 @@
     <ClInclude Include="Map.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
+    <ClInclude Include="Components.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="ECS.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Image Include="assets\player.png">
+      <Filter>리소스 파일\assets</Filter>
+    </Image>
+    <Image Include="assets\dirt.png">
+      <Filter>리소스 파일\assets</Filter>
+    </Image>
+    <Image Include="assets\enemy.png">
+      <Filter>리소스 파일\assets</Filter>
+    </Image>
+    <Image Include="assets\grass.png">
+      <Filter>리소스 파일\assets</Filter>
+    </Image>
+    <Image Include="assets\water.png">
       <Filter>리소스 파일\assets</Filter>
     </Image>
   </ItemGroup>
