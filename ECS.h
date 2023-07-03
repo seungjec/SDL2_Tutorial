@@ -65,7 +65,7 @@ public:
 
     template <typename T> bool hasComponent() const
     {
-        return ComponentBitSet[getComponentTypeID<T>()];
+        return componentBitSet[getComponentTypeID<T>()];
     }
 
     template <typename T, typename... TArgs>
@@ -88,7 +88,6 @@ public:
         auto ptr(componentArray[getComponentTypeID<T>()]);
         return *static_cast<T*>(ptr);
     }
-    //gameobject.getComponent<PositionComponent>().setXpos(25);
 };
 
 class Manager

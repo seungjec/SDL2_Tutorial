@@ -1,9 +1,9 @@
 /*
 * SDL2 tutorial
-* How To Make A Game #7 : Entity Component System in C++ & SDL2 Tutorial
-* https://www.youtube.com/watch?v=XsvI8Sng6dk
+* How To Make A Game #11 : Collision Detection - AABB in C++ And SDL2 Tutorial
+* https://www.youtube.com/watch?v=rjirHFVQAkY
 * 
-* 2023.06.11
+* 2023.07.03
 */
 
 #include "Game.h"
