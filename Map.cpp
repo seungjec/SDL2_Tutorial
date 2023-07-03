@@ -41,7 +41,11 @@ Map::Map()
 }
 
 Map::~Map()
-{}
+{
+    SDL_DestroyTexture(grass);
+    SDL_DestroyTexture(water);
+    SDL_DestroyTexture(dirt);
+}
 
 void Map::LoadMap(int arr[20][25])
 {
